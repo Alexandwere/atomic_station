@@ -6,10 +6,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class Runner {
-    public static final int YEARS = 0;
+    public static final int YEARS = 3;
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(Runner.class, args);
         context.getBean(NuclearStation.class).start(YEARS);
-
     }
 }
