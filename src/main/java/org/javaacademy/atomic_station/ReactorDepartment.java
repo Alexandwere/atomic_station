@@ -10,6 +10,10 @@ import org.springframework.stereotype.Component;
 @Setter
 @Component
 public class ReactorDepartment {
+    public static final int NUMBER_FAILURE_RUN = 100;
+    public static final long ENERGY_PER_CYCLE = 10_000_000L;
+
+
     private boolean isWorkNow;
     private int countRun;
 
@@ -18,11 +22,11 @@ public class ReactorDepartment {
             throw new ReactorWorkException("Реактор уже работает");
         }
         countRun++;
-        if (countRun % 100 == 0) {
+        if (countRun % NUMBER_FAILURE_RUN == 0) {
             throw new NuclearFuelIsEmptyException();
         }
         isWorkNow = true;
-        return 10_000_000L;
+        return ENERGY_PER_CYCLE;
     }
 
     public void stop() {

@@ -11,13 +11,15 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class NuclearStation {
+    public static final int DAYS_OF_YEAR = 365;
+
     private ReactorDepartment reactorDepartment = new ReactorDepartment();
     private long totalAmount = 0L;
 
     public void startYear() {
         long energyForYear = 0L;
         log.info("Атомная станция начала работу");
-        for (int i = 0; i < 365; i++) {
+        for (int i = 0; i < DAYS_OF_YEAR; i++) {
             try {
                 long energyOfDay = reactorDepartment.run();
                 energyForYear += energyOfDay;
