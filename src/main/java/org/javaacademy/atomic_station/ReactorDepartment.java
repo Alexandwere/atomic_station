@@ -6,9 +6,9 @@ import org.javaacademy.atomic_station.exception.NuclearFuelIsEmptyException;
 import org.javaacademy.atomic_station.exception.ReactorWorkException;
 import org.springframework.stereotype.Component;
 
+@Component
 @Getter
 @Setter
-@Component
 public class ReactorDepartment {
     public static final int NUMBER_FAILURE_RUN = 100;
     public static final long ENERGY_PER_CYCLE = 10_000_000L;

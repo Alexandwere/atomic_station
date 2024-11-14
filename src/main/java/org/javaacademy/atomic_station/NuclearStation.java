@@ -1,25 +1,22 @@
 package org.javaacademy.atomic_station;
 
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.javaacademy.atomic_station.exception.NuclearFuelIsEmptyException;
 import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+@Component
 @Getter
+@RequiredArgsConstructor
 @Setter
 @Slf4j
-@Component
 public class NuclearStation {
     public static final int DAYS_OF_YEAR = 365;
 
-    @NonNull
-    private ReactorDepartment reactorDepartment;
-    @NonNull
-    private SecurityDepartment securityDepartment;
+    private final ReactorDepartment reactorDepartment;
+    private final SecurityDepartment securityDepartment;
     private long totalAmount;
     private int accidentCountAllTime;
 
