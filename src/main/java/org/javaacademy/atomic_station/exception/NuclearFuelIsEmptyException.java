@@ -1,7 +1,7 @@
 package org.javaacademy.atomic_station.exception;
 
-public class NuclearFuelIsEmptyException extends RuntimeException {
-    public NuclearFuelIsEmptyException() {
+import lombok.experimental.StandardException;
 
-    }
+@StandardException
+public class NuclearFuelIsEmptyException extends RuntimeException {
 }

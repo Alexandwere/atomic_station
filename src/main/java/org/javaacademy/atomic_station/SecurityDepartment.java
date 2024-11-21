@@ -1,5 +1,6 @@
 package org.javaacademy.atomic_station;
 
+import lombok.NonNull;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +9,7 @@ public class SecurityDepartment {
     private final NuclearStation nuclearStation;
     private int accidentCountPeriod;
 
-    public SecurityDepartment(@Lazy NuclearStation nuclearStation) {
+    public SecurityDepartment(@Lazy @NonNull NuclearStation nuclearStation) {
         this.nuclearStation = nuclearStation;
     }
 

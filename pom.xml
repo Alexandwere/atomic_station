@@ -66,6 +66,7 @@
 				<configuration>
 					<configLocation>Common_CheckStyle.xml</configLocation>
 					<consoleOutput>true</consoleOutput>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
 				</configuration>
 				<executions>
 					<execution>

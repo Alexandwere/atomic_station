@@ -20,7 +20,6 @@ public class NuclearStation {
     private long totalAmount;
     private int accidentCountAllTime;
 
-
     public void startYear() {
         long energyForYear = 0L;
         log.info("Атомная станция начала работу");
