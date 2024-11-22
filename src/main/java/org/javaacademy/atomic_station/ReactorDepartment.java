@@ -2,8 +2,8 @@ package org.javaacademy.atomic_station;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.javaacademy.atomic_station.exception.NuclearFuelIsEmptyException;
-import org.javaacademy.atomic_station.exception.ReactorWorkException;
+import org.javaacademy.atomic_station.exceptions.NuclearFuelIsEmptyException;
+import org.javaacademy.atomic_station.exceptions.ReactorWorkException;
 import org.springframework.stereotype.Component;
 
 @Component
