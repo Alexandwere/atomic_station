@@ -1,4 +1,4 @@
-package org.javaacademy.atomic_station;
+package org.javaacademy.atomic_station.department;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 public class ReactorDepartment {
-    public static final int NUMBER_FAILURE_RUN = 100;
-    public static final long ENERGY_PER_CYCLE = 10_000_000L;
+    private static final int NUMBER_FAILURE_RUN = 100;
+    private static final long ENERGY_PER_CYCLE = 10_000_000L;
 
     private boolean isWorkNow;
     private int countRun;
