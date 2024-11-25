@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @Slf4j
 public class NuclearStation {
+
     private static final int DAYS_OF_YEAR = 365;
 
     private final ReactorDepartment reactorDepartment;
@@ -29,7 +30,7 @@ public class NuclearStation {
     @Value("${currency}")
     private String currency;
 
-    public void startYear() {
+    private void startYear() {
         long energyForYear = 0L;
         log.info("Атомная станция начала работу");
         for (int i = 0; i < DAYS_OF_YEAR; i++) {

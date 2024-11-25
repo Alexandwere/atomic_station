@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static java.math.BigDecimal.ZERO;
 import static java.math.BigDecimal.valueOf;
@@ -12,6 +13,7 @@ import static java.math.BigDecimal.valueOf;
 @Component
 @Profile("morocco")
 public class MoroccoEconomicDepartment extends EconomicDepartment {
+
     @Value("${base-price}")
     private BigDecimal basePrice;
     @Value("${increased-price}")
@@ -31,7 +33,7 @@ public class MoroccoEconomicDepartment extends EconomicDepartment {
                     .add(increasedPrice.multiply(valueOf(countElectricity - ENERGY_FOR_BASE_PRICE)));
         }
 
-        return totalIncome.setScale(2);
+        return totalIncome.setScale(2, RoundingMode.HALF_UP);
     }
 
 }

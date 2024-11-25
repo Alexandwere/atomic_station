@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SecurityDepartment {
+
     private final NuclearStation nuclearStation;
     private int accidentCountPeriod;
 
