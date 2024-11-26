@@ -25,7 +25,7 @@ public class MoroccoEconomicDepartment extends EconomicDepartment {
         BigDecimal totalIncome = ZERO;
 
         if (countElectricity <= ENERGY_FOR_BASE_PRICE) {
-            totalIncome = basePrice.multiply(valueOf(ENERGY_FOR_BASE_PRICE));
+            totalIncome = basePrice.multiply(valueOf(countElectricity));
         }
 
         if (countElectricity > ENERGY_FOR_BASE_PRICE) {

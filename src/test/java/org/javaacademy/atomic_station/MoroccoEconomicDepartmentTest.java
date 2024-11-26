@@ -12,14 +12,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 @SpringBootTest
-@ActiveProfiles("france")
-@DisplayName("Экономический отдел Франция")
-public class FranceEconomicDepartmentTest {
-
-    private static final long COUNT_ELECTRICITY_ONE = 3_620_000_000L;
-    private static final long COUNT_ELECTRICITY_TWO = 3_000_000_000L;
-    private static final BigDecimal EXPECTED_INCOME_ONE = BigDecimal.valueOf(1_785_842_690);
-    private static final BigDecimal EXPECTED_INCOME_TWO = BigDecimal.valueOf(1_485_050_000);
+@ActiveProfiles("morocco")
+@DisplayName("Экономический отдел Марокко")
+public class MoroccoEconomicDepartmentTest {
+    private static final long COUNT_ELECTRICITY_ONE = 1_000_000_000L;
+    private static final long COUNT_ELECTRICITY_TWO = 6_000_000_000L;
+    private static final BigDecimal EXPECTED_INCOME_ONE = BigDecimal.valueOf(5_000_000_000L);
+    private static final BigDecimal EXPECTED_INCOME_TWO = BigDecimal.valueOf(31_000_000_000L);
 
     @Autowired
     EconomicDepartment economicDepartment;
@@ -32,5 +31,4 @@ public class FranceEconomicDepartmentTest {
         BigDecimal result2 = economicDepartment.computeYearIncomes(COUNT_ELECTRICITY_TWO);
         Assertions.assertEquals(EXPECTED_INCOME_TWO.setScale(2, RoundingMode.HALF_UP), result2);
     }
-
 }
