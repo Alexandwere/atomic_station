@@ -15,7 +15,6 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("france")
 @DisplayName("Атомная станция")
 public class NuclearStationIntegrationTest {
-
     private static final int WORK_YEAR = 1;
     private static final int EXCEPTED_ACCIDENTS = 3;
     private static final int COUNT_ACCIDENTS = 3;

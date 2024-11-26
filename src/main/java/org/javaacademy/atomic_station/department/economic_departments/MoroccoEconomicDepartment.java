@@ -13,7 +13,6 @@ import static java.math.BigDecimal.valueOf;
 @Component
 @Profile("morocco")
 public class MoroccoEconomicDepartment extends EconomicDepartment {
-
     @Value("${base-price}")
     private BigDecimal basePrice;
     @Value("${increased-price}")

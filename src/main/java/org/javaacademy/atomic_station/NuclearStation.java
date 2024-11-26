@@ -17,7 +17,6 @@ import org.springframework.stereotype.Component;
 @Setter
 @Slf4j
 public class NuclearStation {
-
     private static final int DAYS_OF_YEAR = 365;
 
     private final ReactorDepartment reactorDepartment;

@@ -15,7 +15,6 @@ import java.math.RoundingMode;
 @ActiveProfiles("france")
 @DisplayName("Экономический отдел Франция")
 public class FranceEconomicDepartmentTest {
-
     private static final long COUNT_ELECTRICITY_ONE = 3_620_000_000L;
     private static final long COUNT_ELECTRICITY_TWO = 3_000_000_000L;
     private static final BigDecimal EXPECTED_INCOME_ONE = BigDecimal.valueOf(1_785_842_690);

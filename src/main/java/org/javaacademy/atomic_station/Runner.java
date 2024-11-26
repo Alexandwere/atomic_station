@@ -6,7 +6,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class Runner {
-
     public static final int YEARS = 1;
 
     public static void main(String[] args) {

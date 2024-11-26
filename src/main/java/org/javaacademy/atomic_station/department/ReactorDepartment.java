@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 public class ReactorDepartment {
-
     private static final int NUMBER_FAILURE_RUN = 100;
     private static final long ENERGY_PER_CYCLE = 10_000_000L;
 
