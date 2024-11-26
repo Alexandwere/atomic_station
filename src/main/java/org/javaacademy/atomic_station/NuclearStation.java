@@ -2,7 +2,6 @@ package org.javaacademy.atomic_station;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.javaacademy.atomic_station.department.ReactorDepartment;
 import org.javaacademy.atomic_station.department.SecurityDepartment;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 @RequiredArgsConstructor
-@Setter
 @Slf4j
 public class NuclearStation {
     private static final int DAYS_OF_YEAR = 365;
@@ -22,7 +20,7 @@ public class NuclearStation {
     private final ReactorDepartment reactorDepartment;
     private final SecurityDepartment securityDepartment;
     private final EconomicDepartment economicDepartment;
-    private long totalAmount;
+    private long totalAmount = 0;
     private int accidentCountAllTime;
     @Value("${country}")
     private String country;
@@ -43,6 +41,7 @@ public class NuclearStation {
             }
             reactorDepartment.stop();
         }
+        totalAmount += energyForYear;
         log.info("Атомная станция закончила работу. За год Выработано {} киловатт/часов", energyForYear);
         log.info("Количество инцидентов за год: {}", securityDepartment.getCountAccidents());
         log.info("Доход за год составил: {} {}", economicDepartment.computeYearIncomes(energyForYear), currency);
@@ -57,6 +56,7 @@ public class NuclearStation {
             i++;
         }
         log.info("Количество инцидентов за всю работу станции: {}", accidentCountAllTime);
+        System.out.println(totalAmount);
     }
 
     public void incrementAccident(int count) {
