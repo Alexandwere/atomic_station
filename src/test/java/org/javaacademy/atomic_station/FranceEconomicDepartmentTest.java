@@ -16,9 +16,9 @@ import java.math.RoundingMode;
 @DisplayName("Экономический отдел Франция")
 public class FranceEconomicDepartmentTest {
     private static final long COUNT_ELECTRICITY_ONE = 3_620_000_000L;
-    private static final long COUNT_ELECTRICITY_TWO = 3_000_000_000L;
+    private static final long COUNT_ELECTRICITY_TWO = 500_000_000L;
     private static final BigDecimal EXPECTED_INCOME_ONE = BigDecimal.valueOf(1_785_842_690);
-    private static final BigDecimal EXPECTED_INCOME_TWO = BigDecimal.valueOf(1_485_050_000);
+    private static final BigDecimal EXPECTED_INCOME_TWO = BigDecimal.valueOf(250_000_000);
 
     @Autowired
     EconomicDepartment economicDepartment;
