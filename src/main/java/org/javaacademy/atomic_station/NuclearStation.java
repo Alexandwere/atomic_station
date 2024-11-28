@@ -62,4 +62,5 @@ public class NuclearStation {
     public void incrementAccident(int count) {
         accidentCountAllTime += count;
     }
+
 }

@@ -25,4 +25,5 @@ public class SecurityDepartment {
         nuclearStation.incrementAccident(accidentCountPeriod);
         accidentCountPeriod = 0;
     }
+
 }

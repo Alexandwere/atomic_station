@@ -1,11 +1,16 @@
-package org.javaacademy.atomic_station;
+package org.javaacademy.atomic_station.economic_departments;
 
+import org.javaacademy.atomic_station.NuclearStation;
+import org.javaacademy.atomic_station.department.ReactorDepartment;
+import org.javaacademy.atomic_station.department.SecurityDepartment;
 import org.javaacademy.atomic_station.department.economic_departments.EconomicDepartment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
@@ -14,6 +19,7 @@ import java.math.RoundingMode;
 @SpringBootTest
 @ActiveProfiles("france")
 @DisplayName("Экономический отдел Франция")
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class FranceEconomicDepartmentTest {
     private static final long COUNT_ELECTRICITY_ONE = 3_620_000_000L;
     private static final long COUNT_ELECTRICITY_TWO = 500_000_000L;
@@ -22,6 +28,12 @@ public class FranceEconomicDepartmentTest {
 
     @Autowired
     EconomicDepartment economicDepartment;
+    @MockBean
+    SecurityDepartment securityDepartment;
+    @MockBean
+    NuclearStation nuclearStation;
+    @MockBean
+    ReactorDepartment reactorDepartment;
 
     @Test
     @DisplayName("Успешный расчёт стоимости")

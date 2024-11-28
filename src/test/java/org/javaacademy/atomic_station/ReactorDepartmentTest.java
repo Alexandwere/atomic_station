@@ -6,21 +6,15 @@ import org.javaacademy.atomic_station.exceptions.ReactorWorkException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest
 @ActiveProfiles("france")
 @DisplayName("Реактор")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ReactorDepartmentTest {
     private static final long ENERGY_PER_CYCLE = 10_000_000L;
     private static final int COUNT_RUN = 99;
 
-    @Autowired
-    private ReactorDepartment reactorDepartment;
+    private final ReactorDepartment reactorDepartment = new ReactorDepartment();
 
     @Test
     @DisplayName("Запуска реактора - успешно")
@@ -33,13 +27,13 @@ public class ReactorDepartmentTest {
     @DisplayName("Запуск реактора - ошибка")
     public void failureRun() {
         reactorDepartment.setWorkNow(true);
-        Assertions.assertThrows(ReactorWorkException.class, () -> reactorDepartment.run());
+        Assertions.assertThrows(ReactorWorkException.class, reactorDepartment::run);
     }
 
     @Test
     @DisplayName("Стоп реактора - ошибка")
     public void failureStop() {
-        Assertions.assertThrows(ReactorWorkException.class, () -> reactorDepartment.stop());
+        Assertions.assertThrows(ReactorWorkException.class, reactorDepartment::stop);
     }
 
     @Test
@@ -55,6 +49,7 @@ public class ReactorDepartmentTest {
     @DisplayName("100-й запуск - ошибка")
     public void failureRun100() {
         reactorDepartment.setCountRun(COUNT_RUN);
-        Assertions.assertThrows(NuclearFuelIsEmptyException.class, () -> reactorDepartment.run());
+        Assertions.assertThrows(NuclearFuelIsEmptyException.class, reactorDepartment::run);
     }
+
 }

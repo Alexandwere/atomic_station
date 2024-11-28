@@ -12,6 +12,6 @@ public class Runner {
         ConfigurableApplicationContext context = SpringApplication.run(Runner.class, args);
         NuclearStation bean = context.getBean(NuclearStation.class);
         bean.start(YEARS);
-
     }
+
 }

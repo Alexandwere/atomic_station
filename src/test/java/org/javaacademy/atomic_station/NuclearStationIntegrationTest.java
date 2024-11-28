@@ -14,6 +14,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("france")
 @DisplayName("Атомная станция")
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class NuclearStationIntegrationTest {
     private static final int WORK_YEAR = 1;
     private static final int EXCEPTED_ACCIDENTS = 3;
