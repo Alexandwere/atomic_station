@@ -1,8 +1,5 @@
 package org.javaacademy.atomic_station;
 
-import org.javaacademy.atomic_station.department.ReactorDepartment;
-import org.javaacademy.atomic_station.department.SecurityDepartment;
-import org.javaacademy.atomic_station.department.economic_departments.EconomicDepartment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,12 +19,6 @@ public class NuclearStationIntegrationTest {
 
     @Autowired
     NuclearStation nuclearStation;
-    @Autowired
-    SecurityDepartment securityDepartment;
-    @Autowired
-    ReactorDepartment reactorDepartment;
-    @Autowired
-    EconomicDepartment economicDepartment;
 
     @Test
     @DisplayName("Успешный старт")
