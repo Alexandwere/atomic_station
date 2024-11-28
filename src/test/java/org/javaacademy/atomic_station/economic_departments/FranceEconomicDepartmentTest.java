@@ -23,8 +23,10 @@ import java.math.RoundingMode;
 public class FranceEconomicDepartmentTest {
     private static final long COUNT_ELECTRICITY_ONE = 3_620_000_000L;
     private static final long COUNT_ELECTRICITY_TWO = 500_000_000L;
+    private static final long COUNT_ELECTRICITY_THREE = 3_000_000_000L;
     private static final BigDecimal EXPECTED_INCOME_ONE = BigDecimal.valueOf(1_785_842_690);
     private static final BigDecimal EXPECTED_INCOME_TWO = BigDecimal.valueOf(250_000_000);
+    private static final BigDecimal EXPECTED_INCOME_THREE = BigDecimal.valueOf(1_485_050_000);
 
     @Autowired
     EconomicDepartment economicDepartment;
@@ -42,6 +44,8 @@ public class FranceEconomicDepartmentTest {
         Assertions.assertEquals(EXPECTED_INCOME_ONE.setScale(2, RoundingMode.HALF_UP), result);
         BigDecimal result2 = economicDepartment.computeYearIncomes(COUNT_ELECTRICITY_TWO);
         Assertions.assertEquals(EXPECTED_INCOME_TWO.setScale(2, RoundingMode.HALF_UP), result2);
+        BigDecimal result3 = economicDepartment.computeYearIncomes(COUNT_ELECTRICITY_THREE);
+        Assertions.assertEquals(EXPECTED_INCOME_THREE.setScale(2, RoundingMode.HALF_UP), result3);
     }
 
 }
