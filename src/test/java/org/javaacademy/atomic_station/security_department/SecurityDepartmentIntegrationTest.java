@@ -16,7 +16,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("france")
 @DisplayName("Отдел безопасности - интеграционный")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 public class SecurityDepartmentIntegrationTest {
     private static final int EXPECTED_ACCIDENTS = 1;
 

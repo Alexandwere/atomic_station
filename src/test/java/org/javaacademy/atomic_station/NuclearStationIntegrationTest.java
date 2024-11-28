@@ -39,7 +39,6 @@ public class NuclearStationIntegrationTest {
 
     @Test
     @DisplayName("Успешное добавление инцидентов")
-    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
     public void successIncrementAccident() {
         nuclearStation.incrementAccident(COUNT_ACCIDENTS);
         Assertions.assertEquals(nuclearStation.getAccidentCountAllTime(), EXCEPTED_ACCIDENTS);

@@ -19,7 +19,7 @@ import java.math.RoundingMode;
 @SpringBootTest
 @ActiveProfiles("morocco")
 @DisplayName("Экономический отдел Марокко")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 public class MoroccoEconomicDepartmentTest {
     private static final long COUNT_ELECTRICITY_ONE = 1_000_000_000L;
     private static final long COUNT_ELECTRICITY_TWO = 6_000_000_000L;
